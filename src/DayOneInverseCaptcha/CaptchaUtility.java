@@ -37,4 +37,14 @@ public class CaptchaUtility {
 
         return duplicateCaptchaIntegerArray;
     }
+
+    public Integer getCaptchaSum(ArrayList<Integer> duplicateCaptchaIntegerArray){
+        Integer captchaSum = 0;
+
+        for(int i =0; i < duplicateCaptchaIntegerArray.size(); i++) {
+            captchaSum += duplicateCaptchaIntegerArray.get(i);
+        }
+
+        return captchaSum;
+    }
 }

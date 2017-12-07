@@ -39,6 +39,16 @@ public class CaptchaUtilityTest {
     }
 
     @Test
+    public void IntegerArray12Returns3() {
+        String captchaString = "1122";
+        ArrayList<Integer> captchaArray = captchaUtility.createIntegerList(captchaString);
+        ArrayList<Integer> duplicateCaptchaIntegerArray = captchaUtility.createDuplicateCaptchaIntegerArray(captchaArray);
+        Integer captchaSum = captchaUtility.getCaptchaSum(duplicateCaptchaIntegerArray);
+
+        assertEquals("3", captchaSum.toString());
+    }
+
+    @Test
     public void integerString1111ReturnsIntegerArray1111() {
         String captchaString = "1111";
         ArrayList<Integer> captchaArray = captchaUtility.createIntegerList(captchaString);
