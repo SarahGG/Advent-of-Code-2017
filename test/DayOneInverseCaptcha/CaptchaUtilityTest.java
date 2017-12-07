@@ -28,4 +28,13 @@ public class CaptchaUtilityTest {
         ArrayList<Integer> captchaArray = captchaUtility.createIntegerList(captchaString);
         assertEquals("[1, 1, 2, 2]", captchaArray.toString());
     }
+
+    @Test
+    public void integerString1122ReturnsIntegerArray12() {
+        String captchaString = "1122";
+        ArrayList<Integer> captchaArray = captchaUtility.createIntegerList(captchaString);
+        ArrayList<Integer> duplicateCaptchaIntegerArray = captchaUtility.createDuplicateCaptchaIntegerArray(captchaArray);
+
+        assertEquals("[1, 2]", duplicateCaptchaIntegerArray.toString());
+    }
 }
