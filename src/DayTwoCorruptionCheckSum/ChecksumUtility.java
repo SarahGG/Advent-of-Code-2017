@@ -15,4 +15,14 @@ public class ChecksumUtility {
     public List<String> getSpreadsheetRows(String spreadsheet) {
         return Arrays.asList(spreadsheet.split("\n"));
     }
+
+    public ArrayList<List<String>> getSpreadsheetColumns(List<String> checksumStringArray) {
+        ArrayList<List<String>> spreadsheetStringArray = new ArrayList<>();
+
+        for(String arrayRow : checksumStringArray) {
+            spreadsheetStringArray.add(Arrays.asList(arrayRow.split("\\s+")));
+        }
+
+        return spreadsheetStringArray;
+    }
 }
