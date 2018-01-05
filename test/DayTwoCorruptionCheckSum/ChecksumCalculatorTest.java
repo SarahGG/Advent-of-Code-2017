@@ -9,12 +9,12 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Test class for the ChecksumUtility Class
+ * Test class for the ChecksumCalculator Class
  *
  * @author Sarah Guarino
  * @version 1.0
  */
-public class ChecksumUtilityTest {
+public class ChecksumCalculatorTest {
     private  ChecksumUtility checksumUtility;
     private String spreadsheet;
     private List<String> checksumStringArray;
@@ -32,12 +32,24 @@ public class ChecksumUtilityTest {
     }
 
     @Test
-    public void checksumStringReturnsArrayOfStrings() {
-        assertEquals("[5 1 9 5, 7 5 3, 2 4 6 8]", checksumStringArray.toString());
+    public void highestNumbersFromEachRowAreNineSevenAndEight() {
+        ArrayList<Integer> highestNumbers = new ArrayList<>();
+
+        for (List<String> rows : checksumStringArrayArray) {
+            highestNumbers.add(ChecksumCalculator.getHighestNumber(rows));
+        }
+
+        assertEquals("[9, 7, 8]", highestNumbers.toString());
     }
 
     @Test
-    public void checksumArrayOfRowsReturnsArrayOfRowsAndColumns() {
-        assertEquals("[[5, 1, 9, 5], [7, 5, 3], [2, 4, 6, 8]]", checksumStringArrayArray.toString());
+    public void lowestNumbersFromEachRowAreOneThreeAndTwo() {
+        ArrayList<Integer> lowestNumbers = new ArrayList<>();
+
+        for(List<String> rows : checksumStringArrayArray) {
+            lowestNumbers.add(ChecksumCalculator.getLowestNumber(rows));
+        }
+
+        assertEquals("[1, 3, 2]", lowestNumbers.toString());
     }
 }
