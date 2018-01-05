@@ -21,6 +21,7 @@ public class ChecksumCalculatorTest {
     private ArrayList<List<String>> checksumStringArrayArray;
 
 
+
     @Before
     public void setUp() {
         checksumSpreadsheetMaker = new ChecksumSpreadsheetMaker();
@@ -29,6 +30,8 @@ public class ChecksumCalculatorTest {
                 "2 4 6 8";
         checksumStringArray = checksumSpreadsheetMaker.getSpreadsheetRows(spreadsheet);
         checksumStringArrayArray = checksumSpreadsheetMaker.getSpreadsheetColumns(checksumStringArray);
+
+
     }
 
     @Test
@@ -51,5 +54,15 @@ public class ChecksumCalculatorTest {
         }
 
         assertEquals("[1, 3, 2]", lowestNumbers.toString());
+    }
+
+    @Test
+    public void differencesOfEachRowAreEightFourAndSix() {
+        ArrayList<Integer> differences = new ArrayList<>();
+
+        for(List<String> rows : checksumStringArrayArray) {
+        }
+
+        assertEquals("[8, 4, 6]", differences.toString());
     }
 }

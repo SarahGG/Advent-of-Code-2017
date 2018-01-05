@@ -36,4 +36,10 @@ public class ChecksumCalculator {
         }
         return lowestNumber;
     }
+
+    public static Integer getDifference(List<String> row) {
+        Integer lowestNumber = getLowestNumber(row);
+        Integer highestNumber = getHighestNumber(row);
+        return highestNumber - lowestNumber;
+    }
 }
