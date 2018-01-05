@@ -25,4 +25,17 @@ public class ChecksumUtility {
 
         return spreadsheetStringArray;
     }
+
+    public Integer getHighestNumber(List<String> spreadsheetRow) {
+        Integer highestNumber = Integer.parseInt(spreadsheetRow.get(0));
+
+        for(String stringNumber : spreadsheetRow) {
+            Integer intNumber = Integer.parseInt(stringNumber);
+
+            if(intNumber > highestNumber) {
+                highestNumber = intNumber;
+            }
+        }
+        return highestNumber;
+    }
 }

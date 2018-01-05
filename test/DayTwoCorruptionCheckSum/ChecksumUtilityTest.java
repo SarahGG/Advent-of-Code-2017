@@ -40,4 +40,15 @@ public class ChecksumUtilityTest {
     public void checksumArrayOfRowsReturnsArrayOfRowsAndColumns() {
         assertEquals("[[5, 1, 9, 5], [7, 5, 3], [2, 4, 6, 8]]", checksumStringArrayArray.toString());
     }
+
+    @Test
+    public void highestNumbersFromEachRowAreNineSevenAndEight() {
+        ArrayList<Integer> highestNumbers = new ArrayList<>();
+
+        for (List<String> rows : checksumStringArrayArray) {
+            highestNumbers.add(checksumUtility.getHighestNumber(rows));
+        }
+
+        assertEquals("[9, 7, 8]", highestNumbers.toString());
+    }
 }
