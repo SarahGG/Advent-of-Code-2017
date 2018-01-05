@@ -51,4 +51,15 @@ public class ChecksumUtilityTest {
 
         assertEquals("[9, 7, 8]", highestNumbers.toString());
     }
+
+    @Test
+    public void lowestNumbersFromEachRowAreOneThreeAndTwo() {
+        ArrayList<Integer> lowestNumbers = new ArrayList<>();
+
+        for(List<String> rows : checksumStringArrayArray) {
+            lowestNumbers.add(checksumUtility.getLowestNumber(rows));
+        }
+
+        assertEquals("[1, 3, 2]", lowestNumbers.toString());
+    }
 }
