@@ -38,4 +38,18 @@ public class ChecksumUtility {
         }
         return highestNumber;
     }
+
+    public Integer getLowestNumber(List<String> row) {
+        Integer lowestNumber = Integer.parseInt(row.get(0));
+
+        for (String stringNumber : row) {
+            Integer intNumber = Integer.parseInt(stringNumber);
+
+            if(lowestNumber > intNumber) {
+                lowestNumber = intNumber;
+            }
+        }
+
+        return lowestNumber;
+    }
 }
