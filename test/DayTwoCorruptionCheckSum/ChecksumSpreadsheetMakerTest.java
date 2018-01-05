@@ -9,13 +9,13 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Test class for the ChecksumUtility Class
+ * Test class for the ChecksumSpreadsheetMaker Class
  *
  * @author Sarah Guarino
  * @version 1.0
  */
-public class ChecksumUtilityTest {
-    private  ChecksumUtility checksumUtility;
+public class ChecksumSpreadsheetMakerTest {
+    private ChecksumSpreadsheetMaker checksumSpreadsheetMaker;
     private String spreadsheet;
     private List<String> checksumStringArray;
     private ArrayList<List<String>> checksumStringArrayArray;
@@ -23,12 +23,12 @@ public class ChecksumUtilityTest {
 
     @Before
     public void setUp() {
-        checksumUtility = new ChecksumUtility();
+        checksumSpreadsheetMaker = new ChecksumSpreadsheetMaker();
         spreadsheet = "5 1 9 5\n" +
                 "7 5 3\n" +
                 "2 4 6 8";
-        checksumStringArray = checksumUtility.getSpreadsheetRows(spreadsheet);
-        checksumStringArrayArray = checksumUtility.getSpreadsheetColumns(checksumStringArray);
+        checksumStringArray = checksumSpreadsheetMaker.getSpreadsheetRows(spreadsheet);
+        checksumStringArrayArray = checksumSpreadsheetMaker.getSpreadsheetColumns(checksumStringArray);
     }
 
     @Test

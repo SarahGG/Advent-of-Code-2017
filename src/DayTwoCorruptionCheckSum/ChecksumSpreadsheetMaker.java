@@ -11,7 +11,7 @@ package DayTwoCorruptionCheckSum;
  * @author Sarah Guarino
  * @version 1.0
  */
-public class ChecksumUtility {
+public class ChecksumSpreadsheetMaker {
     public List<String> getSpreadsheetRows(String spreadsheet) {
         return Arrays.asList(spreadsheet.split("\n"));
     }
