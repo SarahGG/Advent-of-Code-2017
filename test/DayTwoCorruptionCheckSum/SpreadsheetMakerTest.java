@@ -30,4 +30,18 @@ public class SpreadsheetMakerTest {
         //there is five columns
         assertEquals(5, spreadsheetRow.size());
     }
+
+    @Test
+    public void spreadsheetHasThreeRows() {
+        SpreadsheetMaker spreadsheetMaker = new SpreadsheetMaker();
+        ArrayList<ArrayList<String>> spreadsheet = new ArrayList<>();
+
+        assertEquals(0, spreadsheet.size());
+
+        spreadsheetMaker.addRow(spreadsheet);
+        spreadsheetMaker.addRow(spreadsheet);
+        spreadsheetMaker.addRow(spreadsheet);
+
+        assertEquals(3, spreadsheet.size());
+    }
 }

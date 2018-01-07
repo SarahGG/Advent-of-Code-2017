@@ -11,6 +11,18 @@ package DayTwoCorruptionCheckSum;
  */
 
 public class SpreadsheetMaker {
+    private int currentRow;
+
+     SpreadsheetMaker() {
+        currentRow = -1;
+    }
+
+    public void addRow(ArrayList<ArrayList<String>> spreadsheet) {
+        currentRow++;
+        spreadsheet.add(new ArrayList<>());
+        addColumn(spreadsheet.get(currentRow));
+    }
+
     public void addColumn(ArrayList<String> spreadsheetRow) {
         spreadsheetRow.add("");
     }
