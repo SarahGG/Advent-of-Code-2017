@@ -44,4 +44,16 @@ public class SpreadsheetMakerTest {
 
         assertEquals(3, spreadsheet.size());
     }
+
+    @Test
+    public void spreadsheetIsInitialized() {
+        SpreadsheetMaker spreadsheetMaker = new SpreadsheetMaker();
+        String spreadsheetString = "5 1 9 5\n" +
+                "7 5 3\n" +
+                "2 4 6 8";
+
+        ArrayList<ArrayList<String>> spreadsheet = spreadsheetMaker.buildSpreadsheet(spreadsheetString);
+
+        assertEquals("[[5, 1, 9, 5], [7, 5, 3], [2, 4, 6, 8]]", spreadsheet.toString());
+    }
 }
