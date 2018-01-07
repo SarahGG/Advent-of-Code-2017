@@ -1,5 +1,7 @@
 package DayTwoCorruptionCheckSum;
 
+        import java.util.ArrayList;
+
 /**
  * Utility class Advent of Code
  * Day Two: Corruption Checksum
@@ -9,5 +11,7 @@ package DayTwoCorruptionCheckSum;
  */
 
 public class SpreadsheetMaker {
-
+    public void addColumn(ArrayList<String> spreadsheetRow) {
+        spreadsheetRow.add("");
+    }
 }
