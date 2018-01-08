@@ -35,4 +35,17 @@ public class CalculatorTest {
 
         assertEquals("[9, 7, 8]", highestNumbers.toString());
     }
+
+    @Test
+    public void lowestNumbersFromEachRowAreOneThreeAndTwo() {
+        SpreadsheetMaker spreadsheetMaker = new SpreadsheetMaker();
+        ArrayList<ArrayList<String>> spreadsheet = spreadsheetMaker.buildSpreadsheet(spreadsheetString);
+        ArrayList<Integer> lowestNumbers = new ArrayList<>();
+
+        for(ArrayList<String> rows : spreadsheet) {
+            lowestNumbers.add(Calculator.getLowestNumber(rows));
+        }
+
+        assertEquals("[1, 3, 2]", lowestNumbers.toString());
+    }
 }
