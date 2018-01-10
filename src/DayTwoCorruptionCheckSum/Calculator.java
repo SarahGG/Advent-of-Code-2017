@@ -40,4 +40,14 @@ public class Calculator {
     public static Integer getDifference(ArrayList<String> row) {
         return (getHighestNumber(row) - getLowestNumber(row));
     }
+
+    public static Integer getChecksum(ArrayList<ArrayList<String>> spreadsheet) {
+        Integer checksum = 0;
+
+        for(ArrayList<String> row : spreadsheet) {
+            checksum += (getDifference(row));
+        }
+
+        return checksum;
+    }
 }

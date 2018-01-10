@@ -61,4 +61,16 @@ public class CalculatorTest {
 
         assertEquals("[8, 4, 6]", differences.toString());
     }
+
+    @Test
+    public void checksumOfSpreadsheetIsEighteen() {
+        Integer checksum;
+
+        SpreadsheetMaker spreadsheetMaker = new SpreadsheetMaker();
+        ArrayList<ArrayList<String>> spreadsheet = spreadsheetMaker.buildSpreadsheet(spreadsheetString);
+
+        checksum = Calculator.getChecksum(spreadsheet);
+        System.out.println(checksum);
+        assertEquals("18", checksum.toString());
+    }
 }
