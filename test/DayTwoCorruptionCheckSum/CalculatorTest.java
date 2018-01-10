@@ -48,4 +48,17 @@ public class CalculatorTest {
 
         assertEquals("[1, 3, 2]", lowestNumbers.toString());
     }
+
+    @Test
+    public void differencesOfEachRowAreEightFourAndSix() {
+        ArrayList<Integer> differences = new ArrayList<>();
+        SpreadsheetMaker spreadsheetMaker = new SpreadsheetMaker();
+        ArrayList<ArrayList<String>> spreadsheet = spreadsheetMaker.buildSpreadsheet(spreadsheetString);
+
+        for(ArrayList<String> rows : spreadsheet) {
+            differences.add(Calculator.getDifference(rows));
+        }
+
+        assertEquals("[8, 4, 6]", differences.toString());
+    }
 }

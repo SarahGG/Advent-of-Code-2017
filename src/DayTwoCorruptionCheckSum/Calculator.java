@@ -36,4 +36,8 @@ public class Calculator {
         }
         return lowestNumber;
     }
+
+    public static Integer getDifference(ArrayList<String> row) {
+        return (getHighestNumber(row) - getLowestNumber(row));
+    }
 }
