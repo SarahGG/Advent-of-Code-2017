@@ -48,7 +48,7 @@ public class SpreadsheetMakerTest {
     @Test
     public void spreadsheetIsInitialized() {
         SpreadsheetMaker spreadsheetMaker = new SpreadsheetMaker();
-        String spreadsheetString = "5 1 9 5\n" +
+        String spreadsheetString = "5 1n9 5\n" +
                 "7 5 3\n" +
                 "2 4 6 8";
 

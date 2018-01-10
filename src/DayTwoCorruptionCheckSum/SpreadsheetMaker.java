@@ -33,6 +33,7 @@ public class SpreadsheetMaker {
 
     public ArrayList<ArrayList<String>> buildSpreadsheet(String spreadsheetString) {
         ArrayList<ArrayList<String>> spreadsheet = new ArrayList<>();
+        boolean columnIsEmpty = true;
 
         addRow(spreadsheet);
 
@@ -45,10 +46,15 @@ public class SpreadsheetMaker {
                         currentChar;
 
                 spreadsheet.get(currentRow).set(currentColumn, currentNumber);
+                columnIsEmpty = false;
             } else if(currentChar.matches("[\n]")){
                 addRow(spreadsheet);
+                columnIsEmpty = true;
             } else {
-                addColumn(spreadsheet.get(currentRow));
+                if(!columnIsEmpty) {
+                    addColumn(spreadsheet.get(currentRow));
+                    columnIsEmpty = true;
+                }
             }
         }
 
