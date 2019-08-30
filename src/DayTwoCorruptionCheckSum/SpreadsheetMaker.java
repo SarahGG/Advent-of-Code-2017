@@ -1,6 +1,8 @@
 package DayTwoCorruptionCheckSum;
 
-        import java.util.ArrayList;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Utility class Advent of Code
@@ -14,7 +16,7 @@ public class SpreadsheetMaker {
     private int currentRow;
     private int currentColumn;
 
-     SpreadsheetMaker() {
+    SpreadsheetMaker() {
         currentRow = -1;
         currentColumn = -1;
     }
@@ -31,31 +33,11 @@ public class SpreadsheetMaker {
         spreadsheetRow.add("");
     }
 
-    public ArrayList<ArrayList<String>> buildSpreadsheet(String spreadsheetString) {
-        ArrayList<ArrayList<String>> spreadsheet = new ArrayList<>();
-        boolean columnIsEmpty = true;
-
-        addRow(spreadsheet);
-
-        for(int i = 0; i < spreadsheetString.length(); i++) {
-            String currentChar = Character.toString(spreadsheetString.charAt(i));
-
-            if(currentChar.matches("[0-9]")) {
-                String currentNumber = "" +
-                        spreadsheet.get(currentRow).get(currentColumn) +
-                        currentChar;
-
-                spreadsheet.get(currentRow).set(currentColumn, currentNumber);
-                columnIsEmpty = false;
-            } else if(currentChar.matches("[\n]")){
-                addRow(spreadsheet);
-                columnIsEmpty = true;
-            } else {
-                if(!columnIsEmpty) {
-                    addColumn(spreadsheet.get(currentRow));
-                    columnIsEmpty = true;
-                }
-            }
+    public ArrayList<List<String>> buildSpreadsheet(String spreadsheetString) {
+        List<String> unsplitRowsOfStrings = Arrays.asList(spreadsheetString.split("[\n]"));
+        ArrayList<List<String>> spreadsheet = new ArrayList<>();
+        for(String unsplitRow : unsplitRowsOfStrings) {
+            spreadsheet.add(Arrays.asList(unsplitRow.split("[\t]")));
         }
 
         return spreadsheet;

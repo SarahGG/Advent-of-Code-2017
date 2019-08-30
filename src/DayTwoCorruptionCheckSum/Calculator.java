@@ -1,6 +1,7 @@
 package DayTwoCorruptionCheckSum;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Performs Basic Mathematical Calculations
@@ -11,7 +12,7 @@ import java.util.ArrayList;
  * @version 1.0
  */
 public class Calculator {
-    public static Integer getHighestNumber(ArrayList<String> spreadsheetRow) {
+    public static Integer getHighestNumber(List<String> spreadsheetRow) {
         Integer highestNumber = Integer.parseInt(spreadsheetRow.get(0));
 
         for(String stringNumber : spreadsheetRow) {
@@ -24,7 +25,7 @@ public class Calculator {
         return highestNumber;
     }
 
-    public static Integer getLowestNumber(ArrayList<String> spreadsheetRow) {
+    public static Integer getLowestNumber(List<String> spreadsheetRow) {
         Integer lowestNumber = Integer.parseInt(spreadsheetRow.get(0));
 
         for(String stringNumber : spreadsheetRow) {
@@ -37,14 +38,14 @@ public class Calculator {
         return lowestNumber;
     }
 
-    public static Integer getDifference(ArrayList<String> row) {
+    public static Integer getDifference(List<String> row) {
         return (getHighestNumber(row) - getLowestNumber(row));
     }
 
-    public static Integer getChecksum(ArrayList<ArrayList<String>> spreadsheet) {
+    public static Integer getChecksum(ArrayList<List<String>> spreadsheet) {
         Integer checksum = 0;
 
-        for(ArrayList<String> row : spreadsheet) {
+        for(List<String> row : spreadsheet) {
             checksum += (getDifference(row));
         }
 

@@ -3,6 +3,7 @@ package DayTwoCorruptionCheckSum;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -48,11 +49,11 @@ public class SpreadsheetMakerTest {
     @Test
     public void spreadsheetIsInitialized() {
         SpreadsheetMaker spreadsheetMaker = new SpreadsheetMaker();
-        String spreadsheetString = "5 1n9 5\n" +
-                "7 5 3\n" +
-                "2 4 6 8";
+        String spreadsheetString = "5\t1\t9\t5\n" +
+                "7\t5\t3\n" +
+                "2\t4\t6\t8";
 
-        ArrayList<ArrayList<String>> spreadsheet = spreadsheetMaker.buildSpreadsheet(spreadsheetString);
+        ArrayList<List<String>> spreadsheet = spreadsheetMaker.buildSpreadsheet(spreadsheetString);
 
         assertEquals("[[5, 1, 9, 5], [7, 5, 3], [2, 4, 6, 8]]", spreadsheet.toString());
     }
